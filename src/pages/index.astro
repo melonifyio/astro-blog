@@ -39,9 +39,11 @@ const blogPosts = await getBlogPosts();
           <div class="grid grid-cols-3 gap-4">
             {
               blogPosts.map((item) => (
-                <article class="flex max-w-xl flex-col gap-4 items-start justify-between">
+                <article class="flex max-w-xl flex-col gap-4 items-start justify-start">
                   <div>
-                    <img src={item.image} />
+                    <a href={`/blog/${item.slug}`}>
+                      <img src={item.image} />
+                    </a>
                   </div>
                   <div class="flex items-center gap-x-4 text-xs">
                     <FormattedDate date={item.publishedAt.toDate()} />
